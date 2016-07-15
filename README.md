@@ -1,18 +1,18 @@
 # typed-props
 
-Very simple proof of concept - wouldn't it be ace if you could make properties type safe?
+Very simple proof of concept - wouldn't it be ace if you could have a type safe properties file?
 
-For example, I should be able to create the property
+For example, I should be able to add type parameters to properties in a properties file like so
 
 ```
 my.property.is.an.int:Int=2
 this.one.is.a.string:String=test
 ```
 
-and be able to get them safely in my code
+and then be absolutely sure that when I use them in my code they conform to what my code requires
 
 ```scala
-val p: Option[Int] = "my.property.is.an.int".prop[Int]
+val ip: Option[Int] = "my.property.is.an.int".prop[Int]
 ```
 
 That is the hope of this project.
