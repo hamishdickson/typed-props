@@ -26,3 +26,7 @@ scalacOptions ++= Seq(
   "-Xfuture",
   "-Ywarn-unused-import"     // 2.11 only
 )
+
+initialize ~= { _ =>
+  System.setProperty( "property.file", "src/main/resources/example.properties" )
+}

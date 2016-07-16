@@ -32,8 +32,9 @@ object PropsA {
       // todo - replace with something better
       val kvs = mutable.Map.empty[String, Any]
 
-      // todo - this needs a lot of work
-      val props = Source.fromFile("src/main/resources/example.properties").getLines()
+      // set in build.sbt
+      val propFile: String = System.getProperty("property.file")
+      val props = Source.fromFile(propFile).getLines()
 
       val ps = props.foldRight(kvs)((a, b) => {
         val c = a.split("""=""")
